@@ -21,6 +21,9 @@ export default function Banner() {
         <div>
           <img src="/3.jpg" alt="" loading="lazy" />
         </div>
+        <div>
+          <img src="/4.jpg" alt="" loading="lazy" />
+        </div>
       </Carousel>
     </div>
   );
