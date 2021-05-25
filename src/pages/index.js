@@ -10,7 +10,7 @@ export default function Home({ products }) {
   useEffect(() => setMounted(true), []);
   return (
     <>
-      {mounted && (
+       {mounted && ( 
         <div className="bg-gray-100">
           <Head>
             <title>Amazon Clone</title>
@@ -19,12 +19,11 @@ export default function Home({ products }) {
           <main className="mx-auto max-w-screen-2xl">
             {/* Banner */}
             <Banner />
-
             {/* Products */}
             <ProductFeed products={products} />
           </main>
         </div>
-      )}
+      )} 
     </>
   );
 }
