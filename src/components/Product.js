@@ -2,6 +2,8 @@ import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 2;
@@ -14,11 +16,25 @@ export default function Product({
   category,
   image,
 }) {
+  const dispatch = useDispatch();
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
 
   const [hasPrime] = useState(Math.random() < 0.5);
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      hasPrime,
+      image,
+    };
+    // Send the product as an action to Redux Store ..(Basket Slice)
+    dispatch(addToBasket(product));
+  };
   return (
     <>
       <div className="relative z-30 flex flex-col p-10 m-5 bg-white">
@@ -44,15 +60,17 @@ export default function Product({
 
         <p className="my-2 text-xs line-clamp-2">{description}</p>
         <div className="mb-5">
-          <Currency quantity={price} currency="EGP" />
+        <p className="font-bold"> <Currency  quantity={price} currency="EGP" /></p>
         </div>
         {hasPrime && (
           <div className="flex items-center -mt-5 space-x-2">
-            <img className="w-12 " src="/Prime.png" alt="prime" />
+            <img className="w-12 " src="/prime.png" alt="prime" />
             <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
           </div>
         )}
-        <button className="mt-auto button">Add to Basket</button>
+        <button onClick={addItemToBasket} className="mt-auto button">
+          Add to Basket
+        </button>
       </div>
     </>
   );

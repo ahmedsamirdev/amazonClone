@@ -15,23 +15,23 @@ export default function ProductFeed({ products }) {
               image={image}
             />
           ))}
-        {/* <img className="mx-auto md:col-span-full" src="/adv.jpg" alt="" /> */}
-        {/* <div className="md:col-span-2">
+        <img className="mx-auto md:col-span-full" src="/adv.jpg" alt="" />
+        <div className="md:col-span-2">
+          {products
+            .slice(4, 5)
+            .map(({ id, title, description, price, category, image }) => (
+              <Product
+                key={id}
+                title={title}
+                description={description}
+                price={price}
+                category={category}
+                image={image}
+              />
+            ))}
+        </div>
         {products
-          .slice(4, 5)
-          .map(({ id, title, description, price, category, image }) => (
-            <Product
-              key={id}
-              title={title}
-              description={description}
-              price={price}
-              category={category}
-              image={image}
-            />
-          ))}
-      </div> */}
-        {products
-          .slice(4, products.length)
+          .slice(5, products.length)
           .map(({ id, title, description, price, category, image }) => (
             <Product
               key={id}

@@ -6,11 +6,10 @@ import { useState, useEffect } from "react";
 
 export default function Home({ products }) {
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => setMounted(true), []);
   return (
     <>
-       {mounted && ( 
+      {mounted && (
         <div className="bg-gray-100">
           <Head>
             <title>Amazon Clone</title>
@@ -23,7 +22,7 @@ export default function Home({ products }) {
             <ProductFeed products={products} />
           </main>
         </div>
-      )} 
+      )}
     </>
   );
 }
