@@ -14,20 +14,20 @@ export default function CheckOutProduct({
   hasPrime,
 }) {
   const dispatch = useDispatch();
-  const addItemToBasket = () => {
-    const product = {
-      id,
-      title,
-      price,
-      rating,
-      description,
-      category,
-      image,
-      hasPrime,
-    };
-    //Push item to redux
-    dispatch(addToBasket());
-  };
+  // const addItemToBasket = () => {
+  //   const product = {
+  //     id,
+  //     title,
+  //     price,
+  //     rating,
+  //     description,
+  //     category,
+  //     image,
+  //     hasPrime,
+  //   };
+  //   //Push item to redux
+  //   dispatch(addToBasket());
+  // };
 
   const removeItemFromBasket = () => {
     //Remove item from basket
@@ -60,9 +60,9 @@ export default function CheckOutProduct({
       </div>
       {/* Buttons */}
       <div className="flex flex-col space-y-2 my-auto justify-self-end">
-        <button onClick={addItemToBasket} className=" button">
+        {/* <button onClick={addItemToBasket} className=" button">
           Add Again
-        </button>
+        </button> */}
         <button onClick={removeItemFromBasket} className=" button">
           Remove from Basket
         </button>

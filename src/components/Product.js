@@ -20,7 +20,6 @@ export default function Product({
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
-
   const [hasPrime] = useState(Math.random() < 0.5);
   const addItemToBasket = () => {
     const product = {
@@ -37,7 +36,7 @@ export default function Product({
   };
   return (
     <>
-      <div className="relative z-30 flex flex-col p-10 m-5 bg-white">
+      <div className="relative z-30 rounded-md shadow-md flex flex-col p-10 m-5 bg-white">
         {/* <p className="absolute text-xs text-gray-400 top-2 right-2">{category}</p> */}
         <Image
           src={image}
